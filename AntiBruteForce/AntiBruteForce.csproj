@@ -2,8 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RepositoryType>https://github.com/Andrea-Bruno/AntiBruteForce</RepositoryType>
+    <RepositoryType></RepositoryType>
     <Version>$([System.DateTime]::Now.ToString("1.yy.MM.dd"))</Version>
+    <RepositoryUrl>https://github.com/Andrea-Bruno/AntiBruteForce</RepositoryUrl>
+    <PackageProjectUrl>https://www.nuget.org/packages/AntiBruteForce/</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>brute force;argon2;PBKDF2;key derivation function</PackageTags>
+    <Description>Key derivation function for defense against brute force attacks</Description>
+    <Title>Anti Brute Force</Title>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <Target Name="SetPackageVersion" DependsOnTargets="Build">
@@ -13,6 +20,17 @@
       <PackageVersion>$([System.DateTime]::Now.ToString("1.yy.MM.dd"))</PackageVersion>
     </PropertyGroup>
   </Target>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 
 </Project>
