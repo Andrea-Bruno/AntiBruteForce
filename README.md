@@ -14,9 +14,9 @@ The source is published here: https://github.com/Andrea-Bruno/AntiBruteForce
 ## Examples of use:
 
  - Cross-platform dotnet encryption and decryption library
-   Use this algorithm to optionally prevent brute force attacks with encryption methods
-   Source code of the project: https://github.com/Andrea-Bruno/EncryptionAlgorithm
+	- Use this algorithm to optionally prevent brute force attacks with encryption methods
+	- Source code of the project: https://github.com/Andrea-Bruno/EncryptionAlgorithm
 
  - Passphrase Keeper
-   The seed that is entered is covered by brute force attacks via ParallelHash using entropy and several megabytes of memory
-   Source code of the project: https://github.com/Andrea-Bruno/PassphraseKeeper
+	- The seed that is entered is covered by brute force attacks via ParallelHash using entropy and several megabytes of memory
+	- Source code of the project: https://github.com/Andrea-Bruno/PassphraseKeeper
