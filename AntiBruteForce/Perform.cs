@@ -135,25 +135,26 @@ namespace AntiBruteForce
             if (memoryMegabyte > 0)
             {
                 var memoryBytes = memoryMegabyte * 1000000;
-                if (memoryBytes < (interactions * 32))
+                if (memoryBytes > (interactions * 32))
                 {
-                    throw new Exception("Insufficient number of interactions to fill memory! Each interaction fills 32 bytes. Memory must be greater than " + interactions * 32 + "bytes. Increase the memoryMegabyte value!");
+                    throw new Exception("Insufficient number of interactions to fill memory! Each interaction fills 32 bytes in memory. Memory must be less than " + interactions * 32 + "bytes. Increase the interactions value!");
                 }
                 var memory = new byte[memoryBytes];
-                var memOffset = 0;
+                var memoryOffset = 0;
                 for (progress = 0; progress < interactions; progress++)
                 {
                     hash = sha256.ComputeHash(hash);
-                    Buffer.BlockCopy(hash, 0, memory, memOffset, 32);
-                    memOffset += 32;
-                    if (memOffset >= memoryBytes || progress == interactions -1)
+                    Buffer.BlockCopy(hash, 0, memory, memoryOffset, 32);
+                    memoryOffset += 32;
+                    if (memoryOffset >= memoryBytes || progress == interactions -1)
                     {
                         hash = sha256.ComputeHash(memory);
-                        memOffset = 0;                       
+                        memoryOffset = 0;                       
                     }
                 }
                 hash = sha256.ComputeHash(memory);
             }
+            else
             for (progress = 0; progress < interactions; progress++)
             {
                 hash = sha256.ComputeHash(hash);
