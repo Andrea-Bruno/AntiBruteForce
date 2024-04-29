@@ -11,7 +11,7 @@ This publication is an official presentation addressed to the scientific communi
 
 The source is published here: https://github.com/Andrea-Bruno/AntiBruteForce
 
-## InternetIsAvailable:
+## Examples of use:
 
  - Cross-platform dotnet encryption and decryption library
    Use this algorithm to optionally prevent brute force attacks with encryption methods
