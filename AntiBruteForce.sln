@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementi di soluzione", "El
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAntiBruteForce", "TestAntiBruteForce\TestAntiBruteForce.csproj", "{79B24235-3431-4FC6-A7A5-997AAB00D1E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{EF510E24-20CB-44AC-8554-462F39502157}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF510E24-20CB-44AC-8554-462F39502157}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF510E24-20CB-44AC-8554-462F39502157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79B24235-3431-4FC6-A7A5-997AAB00D1E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79B24235-3431-4FC6-A7A5-997AAB00D1E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79B24235-3431-4FC6-A7A5-997AAB00D1E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79B24235-3431-4FC6-A7A5-997AAB00D1E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
