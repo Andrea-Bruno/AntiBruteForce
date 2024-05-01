@@ -33,15 +33,15 @@ Console.WriteLine("Computation in progress, please wait!");
 // Function that updates the progression of the computation in the console
 static void progressStatus(float progress) => Console.WriteLine((int)(progress * 100) + "%");
 
-// Generate an entropy constant (recommended but not required)
-var Entropy = Assembly.GetEntryAssembly()?.GetTypes().First().GUID;
+// Generate constant salt (recommended but not required)
+var Salt = Assembly.GetEntryAssembly()?.GetTypes().First().GUID;
 
 // Start the stopwatch to measure the time taken for the computation
 var Stopwatch = new Stopwatch();
 Stopwatch.Start();
 
 // Compute the derivative with "Strong" level
-var KeyDerivation = StringToKeyDerivation(password, (int)AntiBruteForceInteractions.Strong, 50, default, progressStatus, entropy: Entropy?.ToByteArray());
+var KeyDerivation = StringToKeyDerivation(password, (int)AntiBruteForceInteractions.Strong, 50, default, progressStatus, salt: Salt?.ToByteArray());
 
 // Write the computation time
 Stopwatch.Start();

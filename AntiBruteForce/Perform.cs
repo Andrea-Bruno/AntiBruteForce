@@ -46,13 +46,13 @@ namespace AntiBruteForce
         /// <param name="threads">Number of threads to use</param>
         /// <param name="refreshProgressBar">Action with a Float parameter useful for updating a progress in the calling application. The Float value returned ranges from 0 to 1 and represents progression.</param>
         /// <param name="refreshMs">How often to call the refresh ProgressBar function to update the progress bar (milliseconds)</param>
-        /// <param name="entropy">If set, it adds an entropy to the data for which you want to compute the recursive hash: This will obviously change the result.</param>
+        /// <param name="salt">If set, it adds salt to the data for which you want to compute the recursive hash: This will obviously change the result.</param>
         /// <returns>hash obtained following the iterations</returns>
 
-        public static byte[] StringToKeyDerivation(string text, long interactions = (long)AntiBruteForceInteractions.Standard, int memoryMegabyte = 0, int threads = DefaultThreads, Action<float> refreshProgressBar = null, int refreshMs = 5000, object entropy = null)
+        public static byte[] StringToKeyDerivation(string text, long interactions = (long)AntiBruteForceInteractions.Standard, int memoryMegabyte = 0, int threads = DefaultThreads, Action<float> refreshProgressBar = null, int refreshMs = 5000, object salt = null)
         {
             var data = Encoding.UTF8.GetBytes(text);
-            return ParallelHash(data, interactions, memoryMegabyte, threads, refreshProgressBar, refreshMs, entropy);
+            return ParallelHash(data, interactions, memoryMegabyte, threads, refreshProgressBar, refreshMs, salt);
         }
 
         /// <summary>
@@ -64,16 +64,16 @@ namespace AntiBruteForce
         /// <param name="threads">Number of threads to use</param>
         /// <param name="refreshProgressBar">Action with a Float parameter useful for updating a progress in the calling application. The Float value returned ranges from 0 to 1 and represents progression.</param>
         /// <param name="refreshMs">How often to call the refresh ProgressBar function to update the progress bar (milliseconds)</param>
-        /// <param name="entropy">If set, it adds an entropy to the data for which you want to compute the recursive hash: This will obviously change the result.</param>
+        /// <param name="salt">If set, it adds salt to the data for which you want to compute the recursive hash: This will obviously change the result.</param>
         /// <returns>hash obtained following the iterations</returns>
-        public static byte[] ParallelHash(byte[] data, long interactions = (int)AntiBruteForceInteractions.Standard, int memoryMegabyte = 0, int threads = DefaultThreads, Action<float> refreshProgressBar = null, int refreshMs = 5000, object entropy = null)
+        public static byte[] ParallelHash(byte[] data, long interactions = (int)AntiBruteForceInteractions.Standard, int memoryMegabyte = 0, int threads = DefaultThreads, Action<float> refreshProgressBar = null, int refreshMs = 5000, object salt = null)
         {
             if (threads == default)
                 threads = DefaultThreads;
-            if (entropy != null)
+            if (salt != null)
             {
-                var entropyData = entropy is byte[]? (byte[])entropy : Encoding.UTF8.GetBytes(entropy.ToString());
-                if (entropy is byte[])
+                var entropyData = salt is byte[]? (byte[])salt : Encoding.UTF8.GetBytes(salt.ToString());
+                if (salt is byte[])
                     data = data.Concat(entropyData);
 
             }
