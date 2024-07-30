@@ -1,4 +1,4 @@
-# Anti Brute Force
+# Anti Brute Force - quantum resistance
 ## Key derivation function for defense against brute force attacks and protection from quantum computer attacks
 ## (Argon3 candidate)
 
