@@ -8,8 +8,8 @@
     <PackageProjectUrl>https://www.nuget.org/packages/AntiBruteForce/</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>brute force;argon2;PBKDF2;key derivation function</PackageTags>
-    <Description>Key derivation function for defense against brute force attacks</Description>
-    <Title>Anti Brute Force</Title>
+    <Description>Key derivation function for defense against brute force attacks, protection from quantum computer attacks</Description>
+    <Title>Anti Brute Force Attacks resistant to quantum computers</Title>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 

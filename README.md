@@ -1,5 +1,5 @@
 # Anti Brute Force
-## Key derivation function for defense against brute force attacks
+## Key derivation function for defense against brute force attacks and protection from quantum computer attacks
 ## (Argon3 candidate)
 
 This Key derivation function software is proposed as a valid alternative to Argon2, focusing on the simplicity of the solution and the easy understanding of the mechanisms adopted.
@@ -15,6 +15,13 @@ The source is published here: https://github.com/Andrea-Bruno/AntiBruteForce
 In cryptography we often use passwords instead of binary keys, because passwords are easier to remember, to write down and can be shorter.
 When a certain algorithm needs a key (e.g. for encryption or for digital signing) a key derivation function (password -> key) is needed.
 We already noted that using SHA-256(password) as key-derivation is insecure! It is vulnerable to many attacks: brute-forcing, dictionary attacks, rainbow attacks and others, which may reverse the hash in practice and attacker can obtain the password.
+
+A key derivation function (KDF) is a cryptographic algorithm that takes a secret key and generates a derived key, which can then be used in place of the original key in cryptographic systems. A KDF can help defend against attacks with quantum computers in a few ways:
+1. **Increased key length:** A KDF can be used to increase the length of the secret key, making it more resistant to brute-force attacks. Quantum computers can perform certain calculations much faster than classical computers, so increasing the key length can help offset this advantage.
+2. **Key stretching:** A KDF can also be used to slow down attackers by incorporating a "key stretching" mechanism. This involves repeatedly hashing the input key with a salt value, which can significantly increase the time required to perform a brute-force attack.
+3. **Quantum-resistant algorithms:** Some KDFs are specifically designed to be resistant to attacks by quantum computers. For example, the NIST has been running a competition to standardize quantum-resistant KDFs, and several candidates have been identified.
+
+It's important to note that while KDFs can help defend against attacks with quantum computers, they are not a silver bullet. Quantum computers are still in the early stages of development, and it's not yet clear how they will ultimately be used in practice. As a result, it's important to stay up-to-date with the latest developments in quantum cryptography and to follow best practices for securing cryptographic systems.
 
 ## Cryptographic Key Derivation Functions
 PBKDF2, Bcrypt, Scrypt and Argon2 are significantly stronger key derivation functions and are designed to survive password guessing (brute force) attacks.
